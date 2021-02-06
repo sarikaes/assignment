@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular-intern"
+  "defaultProject": "angular-intern",
+  "cli": {
+    "analytics": "a3c4a40c-b073-4488-958e-0bced62d22e5"
+  }
 }
