@@ -13,6 +13,9 @@ import { NamepipePipe } from './namepipe.pipe';
 import { CreateitemComponent } from './createitem/createitem.component';
 import { ViewcomponentComponent } from './viewcomponent/viewcomponent.component';
 import{ItemsService} from  './items.service'
+import {HttpClientModule } from '@angular/common/http';
+import { EmployeelistComponent } from './employeelist/employeelist.component'
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,16 @@ import{ItemsService} from  './items.service'
     PipeComponent,
     NamepipePipe,
     CreateitemComponent,
-    ViewcomponentComponent
+    ViewcomponentComponent,
+    EmployeelistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ItemsService],
+  providers: [ItemsService,EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
