@@ -1,0 +1,48 @@
+<!-- <label>
+    Enter Your Name:
+    <input type="text" [formControl]="name">
+  </label>
+  <p>
+      
+    Name:{{name.value}}
+  </p>
+  <p>
+    <button (click)="updateName()">Update Name</button>
+  </p><br> -->
+<h3>Form control</h3>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        firstName:
+    </label>
+    <input type="text" name="fname" class="formControl" formControlName="fname" required>
+    <div *ngIf="userForm.controls.fname.invalid && (userForm.controls.fname.dirty || userForm.controls.fname.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="fname?.errors?.required">
+    First Name is required.
+  </div>
+  <div *ngIf="fname?.errors?.minlength">
+    First Name must be at least 4 characters long.
+  </div>
+    </div>
+    <br><br>
+    
+    <label>
+        lastName:
+    </label>
+    <input type="text" formControlName="lname">
+    <br>
+    <h4>
+        Address
+    </h4>
+    <label>
+        Street
+    </label>
+    <input type="text" formControlName="street">
+    <br><br>
+    <button type="submit" >Submit</button><br><br>
+    <p>
+        <button (click)="updateProfile()">Update Profile</button>
+      </p>
+</form>

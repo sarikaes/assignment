@@ -1,0 +1,51 @@
+<h3>Form Arrray</h3>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+
+    <label>
+        firstName:
+    </label>
+    <input type="text" formControlName="fname">
+    <div *ngIf="profileForm.controls.fname.invalid && (profileForm.controls.fname.dirty || profileForm.controls.fname.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="fname?.errors?.required">
+    First Name is required.
+  </div>
+  <div *ngIf="fname?.errors?.minlength">
+    First Name must be at least 4 characters long.
+  </div>
+    </div>
+    <br><br>
+    
+    <label>
+        lastName:
+    </label>
+    <input type="text" formControlName="lname">
+    <br>
+    <h3>
+        Address
+    </h3>
+    <label>
+        Street
+    </label>
+    <input type="text" formControlName="street">
+    <br><br>
+    <div formArrayName="aliases">
+        <h3>Aliases</h3> <button (click)="addAlias()">Add street</button>
+      
+        <div *ngFor="let alias of aliases.controls; let i=index">
+          <!-- The repeated alias template -->
+          <label>
+            Alias:
+            <input type="text" [formControlName]="i">
+          </label>
+        </div>
+      </div>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button><br><br>
+   
+    <!-- <p>
+        <button (click)="updateProfile()">Update Profile</button>
+      </p> -->
+</form>

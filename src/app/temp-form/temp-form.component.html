@@ -1,0 +1,43 @@
+<form #tempForm="ngForm" (ngSubmit)="submit(tempForm.value)" class="form">
+    <h3>Template-driven</h3>
+<div>
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="fname">
+</div>
+<div>
+    <label>Email</label>
+    <input type="text" name="email" [(ngModel)]="email">
+</div>
+<div>
+    <label> Address</label>
+    <input type="text" name="address" [(ngModel)]="address">
+
+
+</div>
+<div>
+    <label>Phone</label>
+    <input type="number" name="phone" [(ngModel)]="phone">
+</div>
+
+<button type="submit">Submit</button>
+<div [hidden]="!submitted">
+    <table border="1px" class="table table-bordered"> 
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Mobile</th>
+    </tr>
+    <tr>
+    <td>{{fname}}</td>
+    <td>{{email}}</td>
+    <td>{{address}}</td>
+    <td>{{phone}}</td>
+
+
+
+    </tr>
+   
+    </table>
+</div>
+</form>

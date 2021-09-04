@@ -1,10 +1,23 @@
 
-<app-parent>
+<!-- <app-parent>
 
-</app-parent>
+</app-parent> -->
 <!-- <app-directive></app-directive> -->
-<app-pipe></app-pipe>
+<nav>
+    <a routerLink="/parent"  routerLinkActive="active">Parent</a><br>
+    <a routerLink="/child"  routerLinkActive="active" >Child</a><br>
+
+</nav>
+<button routerLink="/lazyload">Home</button>
+<button routerLink="/lazyload/login">Login</button>
+
+
+<!-- <app-pipe></app-pipe>
 <app-createitem></app-createitem>
 <app-viewcomponent></app-viewcomponent>
-<app-employeelist></app-employeelist>
+<app-employeelist></app-employeelist> -->
 <router-outlet></router-outlet>
+<!-- <app-react-form></app-react-form>
+<app-form-array></app-form-array>
+<app-form-builder></app-form-builder>
+<app-temp-form></app-temp-form> -->
